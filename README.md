@@ -43,14 +43,14 @@ console.log(sorted.every((e, i) => e === randomArrB[i]));
 ```
 
 **Time Tested Results:**
-| array input    | random  | sorted  |
+| array input type | random | sorted |
 | -------------- | ------- | ------- |
 | **out of place sorting methods** |
-| Mergesort | 10.39s  | 10.10s  |
-| Quicksort | 10.27s  | CRASH   |
+| Mergesort | 10.39s | 10.10s |
+| Quicksort | 10.27s | CRASH |
 | Sort ID | 97.57ms | 39.78ms |
 | **in place sorting methods** |
-| Heapsort | 4.145s  | 2.183s  |
-| Sort method | 3.029s  | 154ms   |
-| QS Lomuto | 1.240s  | CRASH   |
-| QS Hoare | 1.149s  | 324ms   |
+| Heapsort | 4.145s | 2.183s |
+| nodeJS sort method | 3.029s | 154ms |
+| QS Lomuto | 1.240s | CRASH |
+| QS Hoare | 1.149s | 324ms |
