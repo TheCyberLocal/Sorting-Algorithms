@@ -39,31 +39,3 @@ function quickSort(arr, low = 0, high = arr.length - 1) {
   // Return the sorted array.
   return arr;
 }
-
-
-let randomArr = Array.from({length: 10000000}, (_, i) => i + 1);
-randomArr.sort(() => Math.random() - 0.5);
-let randomArrA = randomArr.slice();
-let randomArrB = randomArr.slice();
-
-console.time('timer1');
-let sorted = quickSort(randomArrA);
-// console.log(sorted);
-console.timeEnd('timer1');
-
-console.time('timer1');
-let sorted2 = randomArrB.sort((a, b) => a - b);
-// console.log(sorted2);
-console.timeEnd('timer1');
-
-// Was sorting algorithm successful?
-console.log(sorted.every((e, i) => e === randomArrB[i]));
-
-
-// array input : random  sorted
-// mergesort   : 10.393s 10.100s
-// quicksort   : 10.272s CRASH
-// sort method : 3.029s  154ms
-// My Hybrids -----------------
-// QS Lomuto   : 1.240s  CRASH
-// QS Hoare    : 1.149s  324ms

@@ -19,3 +19,38 @@ You can use the code in this repository to:
  - Learn about sorting algorithms by reading the code and accompanying explanations.
  - Run the algorithms to see them in action and understand their behavior with different datasets.
  - Modify the algorithms to experiment with optimizations or variations.
+
+
+```js
+// adjust experimental array size to your machine if needed
+let randomArr = Array.from({length: 10000000}, (_, i) => i + 1);
+randomArr.sort(() => Math.random() - 0.5); // Commented during sorted test
+let randomArrA = randomArr.slice();
+let randomArrB = randomArr.slice();
+
+console.time('timer1');
+let sorted = customSort(randomArrA);
+// console.log(sorted);
+console.timeEnd('timer1');
+
+console.time('timer1');
+let sorted2 = randomArrB.sort((a, b) => a - b);
+// console.log(sorted2);
+console.timeEnd('timer1');
+
+// Was sorting algorithm successful?
+console.log(sorted.every((e, i) => e === randomArrB[i]));
+```
+
+**Time Tested Results:**
+| array input    | random  | sorted  |
+| -------------- | ------- | ------- |
+| **out of place sorting methods** |
+| Mergesort | 10.39s  | 10.10s  |
+| Quicksort | 10.27s  | CRASH   |
+| Sort ID | 97.57ms | 39.78ms |
+| **in place sorting methods** |
+| Heapsort | 4.145s  | 2.183s  |
+| Sort method | 3.029s  | 154ms   |
+| QS Lomuto | 1.240s  | CRASH   |
+| QS Hoare | 1.149s  | 324ms   |
